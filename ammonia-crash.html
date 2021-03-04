@@ -1,0 +1,466 @@
+<img
+  src="https://www.troyhunt.com/content/images/2021/03/Troy-hunt-Gab-Data.png"
+  alt="Gab Has Been Breached">
+<p>I've investigated hundreds of data breaches over the years (there are 514 of
+  them in <a href="https://haveibeenpwned.com/">Have I Been Pwned</a> as I write
+  this), and for the most part, the situation with Gab is just another day on
+  the internet. But Gab is also different, having grown dramatically in recent
+  months as an alternative to mainstream incumbent platforms such as Twitter and
+  Facebook and drawing a crowd primarily focused on right wing American
+  politics.</p>
+<p>A couple of days ago, I posted a thread about their alleged breach. I want to
+  go back through that thread here, explain the thinking further and then
+  provide some commentary on the actual data that was exposed. It all began
+  here:</p>
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet">
+  <p lang="en" dir="ltr">So, the <a
+      href="https://twitter.com/getongab?ref_src=twsrc%5Etfw">@getongab</a> data
+    breach situation: Let&#39;s start the bizarreness with their CEO&#39;s
+    ridiculous statement tweeted yesterday: <a
+      href="https://t.co/NyKmEPI0I8">https://t.co/NyKmEPI0I8</a></p>&mdash; Troy
+  Hunt (@troyhunt) <a
+    href="https://twitter.com/troyhunt/status/1366581210055512066?ref_src=twsrc%5Etfw">March
+    2, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>Much of the problem with objectively discussing this breach is that it's
+  impossible to escape the transphobic slurs and religious rhetoric being dished
+  out from the guy at the top. I don't care which god (or demon) you've picked,
+  nor what gender you were born with (or if you decided to change it at some
+  time), nor do I care whose politics you like and whose you don't, I only care
+  about the data. More specifically, I care about the data that's been exposed
+  in the breach, especially when that data may include my own (I'm very
+  serious).</p>
+<!--kg-card-begin: markdown-->
+<blockquote class="twitter-tweet" data-conversation="none">
+  <p lang="en" dir="ltr">This came a couple of days after their post about an
+    &quot;alleged data breach&quot; which is full of pretty bizarre statements:
+    <a href="https://t.co/qmSIkdKg4l">https://t.co/qmSIkdKg4l</a></p>&mdash;
+  Troy Hunt (@troyhunt) <a
+    href="https://twitter.com/troyhunt/status/1366581213448691713?ref_src=twsrc%5Etfw">March
+    2, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: markdown-->
+<p>It's pretty standard practice for an organisation to post a public statement
+  following a breach or even, as the opening sentence of that page suggest, an
+  "alleged" breach. Most organisation begin with "we take the security of your
+  data seriously", layer on lawyer speak, talk about credit cards not being
+  exposed and then promise to provide further updates as they come to hand.
+  Gab's approach... differs:</p>
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet" data-conversation="none">
+  <p lang="en" dir="ltr">For example, because they couldn&#39;t find any public
+    discussion about the breach they assumed that <a
+      href="https://twitter.com/WIRED?ref_src=twsrc%5Etfw">@WIRED</a> reporters
+    were &quot;essentially assisting the hacker in his efforts to smear our
+    business&quot;. There are *always* discussions held in private about a
+    breach before it&#39;s made public.</p>&mdash; Troy Hunt (@troyhunt) <a
+    href="https://twitter.com/troyhunt/status/1366581216472784898?ref_src=twsrc%5Etfw">March
+    2, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>Because Gab "searched high and low for chatter on the breach on the Internet
+  and found nothing", they've drawn the conclusion that reporters are
+  maliciously working with hackers. I've had <em>dozens </em>of occasions where
+  I've known about a breach, there's been no public discussion on it, and I've
+  worked with reporters to help get to the bottom of what's happened. This is
+  normal. It's <em>so</em> normal that the last time I did this was <a
+    href="https://www.bleepingcomputer.com/news/security/european-e-ticketing-platform-ticketcounter-extorted-in-data-breach/">earlier
+    this week with Lawrence Abrams from Bleeping Computer on the Dutch
+    Ticketcounter breach</a>. </p>
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet" data-conversation="none">
+  <p lang="en" dir="ltr">&quot;It is standard practice for passwords to be
+    hashed. If the alleged breach has taken place as described, your passwords
+    have not been revealed.&quot; This is misleading and ignores the simplicity
+    of hash cracking. If your password is &quot;maga2020!&quot; (or similar), it
+    has been revealed.</p>&mdash; Troy Hunt (@troyhunt) <a
+    href="https://twitter.com/troyhunt/status/1366581219387797507?ref_src=twsrc%5Etfw">March
+    2, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>If you're not familiar with hashing, how it's not the same as encryption and
+  how it can still leave passwords vulnerable, <a
+    href="https://www.troyhunt.com/we-didnt-encrypt-your-password-we-hashed-it-heres-what-that-means/">read
+    this primer from September first</a>. As it relates to passwords being
+  revealed, you can't "unhash" a hash in the same way as you can decrypt an
+  encrypted piece of text, however, you can always <em>guess </em>passwords,
+  hash them with the same algorithm (and salt if present) and see if the output
+  matches what was stored. For example, <a
+    href="https://www.troyhunt.com/the-dropbox-hack-is-real/">when I wrote about
+    the Dropbox hack in 2016</a>, I was able to verify my own record simply by
+  hashing the password I had stored in 1Password and comparing the output to the
+  one in the breach. It matched, therefore verifying the legitimacy of the
+  breach. The following year I showed how <a
+    href="https://www.troyhunt.com/data-from-connected-cloudpets-teddy-bears-leaked-and-ransomed-exposing-kids-voice-messages/">even
+    though CloudPets had chosen the very robust bcrypt algorithm for password
+    storage</a>, I was still able to crack a bunch of them courtesy of their
+  extremely weak password rules:</p>
+<!--kg-card-begin: markdown-->
+<p><img
+    src="https://www.troyhunt.com/content/images/2017/02/Cracked-bcrypt-hashes.png"
+    alt="Gab Has Been Breached"></p>
+<!--kg-card-end: markdown-->
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet" data-conversation="none">
+  <p lang="en" dir="ltr">&quot;It is entirely possible for a user of the site to
+    be unidentifiable based on the information they provide at login.&quot; You
+    login with your email address. This (almost always) identifies you, it&#39;s
+    literally how people communicate with *you*! <a
+      href="https://t.co/86klDc37nF">pic.twitter.com/86klDc37nF</a></p>&mdash;
+  Troy Hunt (@troyhunt) <a
+    href="https://twitter.com/troyhunt/status/1366581227960999937?ref_src=twsrc%5Etfw">March
+    2, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>I do actually agree with the quoted sentence insofar as someone could create
+  an email address completely disassociated with them, register for Gab and then
+  login with that account. But that almost never happens because Gab is used by
+  normal humans just wanting to interact with other normal humans and it's not a
+  platform where people are likely to take extra precautions to conceal their
+  true identity. When faced with a registration form that requests an email
+  address, the vast majority of people will simply provide the same email
+  address they use everywhere else, hence my "almost always" comment.</p>
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet" data-conversation="none">
+  <p lang="en" dir="ltr">&quot;In our subscriber records we do not collect
+    health or financial information; we do not collect dates of birth; we do not
+    collect [blah blah].&quot; When you&#39;ve just had your neo-Nazi hate
+    speech associated to your email address leaked, DoB is the least of your
+    worries!</p>&mdash; Troy Hunt (@troyhunt) <a
+    href="https://twitter.com/troyhunt/status/1366581231157014529?ref_src=twsrc%5Etfw">March
+    2, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>This isn't an unusual response to a data breach; many companies try to
+  downplay the significance in order to reduce the perceived impact of it. <a
+    href="https://www.troyhunt.com/good-news-your-credit-card-is-fine-and/">I
+    wrote about this in 2015</a>, specifically as it relates to organisations
+  focusing on the security of credit cards which are one of the most easily
+  replaceable and low-impact classes of data to have exposed. All of the classes
+  of data Gab mentions pale in comparison to the impact of having extremist
+  messaging exposed in connection to a personally identifiable data attribute
+  such as someone's email address. And regardless of your political persuasion,
+  it's clear that a platform designed to have a bare minimum of controls on
+  content (<a
+    href="https://demo-on.gab.com/about/tos#content-standards">although they do
+    define content standards</a>) is going to attract and retain more extreme
+  views; that's part of the attraction for many people.</p>
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet" data-conversation="none">
+  <p lang="en" dir="ltr">&quot;Every major tech company – from Facebook to
+    Twitter – has been the target of multiple and continued data breaches.&quot;
+    AFAIK, neither of these companies have ever had their entire DB dumped in
+    the style <a
+      href="https://twitter.com/getongab?ref_src=twsrc%5Etfw">@getongab</a>
+    appears to have, nor would that be an excuse if they had.</p>&mdash; Troy
+  Hunt (@troyhunt) <a
+    href="https://twitter.com/troyhunt/status/1366581234114076673?ref_src=twsrc%5Etfw">March
+    2, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>This is also fairly common to see in a post-breach announcement, either in
+  generic terms ("as you know, data breaches are very common") or in Gab's case,
+  directly pointing the finger at competing services. The comment is intended to
+  normalise the data breach and downplay its significance, the exact opposite of
+  what we want to encourage in this industry. A few years ago <a
+    href="https://www.troyhunt.com/data-breach-disclosure-101-how-to-succeed-after-youve-failed/">I
+    wrote about how to construct a breach disclosure notice</a> and paid
+  particular attention to how well the Red Cross Blood Service handled theirs.
+  It's little things like apologising; rather than downplaying the incident and
+  directing attention elsewhere, we need to see organisations standing up,
+  copping it on the chin and acknowledging their faults.</p>
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet" data-conversation="none">
+  <p lang="en" dir="ltr">Then there&#39;s the <a
+      href="https://twitter.com/WIRED?ref_src=twsrc%5Etfw">@WIRED</a> piece from
+    <a
+      href="https://twitter.com/a_greenberg?ref_src=twsrc%5Etfw">@a_greenberg</a>,
+    a top-notch journo I&#39;ve got a lot of respect for based on previous
+    pieces he&#39;s written and many discussions I&#39;ve had with him
+    personally: <a href="https://t.co/JHp0nMNE0a">https://t.co/JHp0nMNE0a</a>
+  </p>&mdash; Troy Hunt (@troyhunt) <a
+    href="https://twitter.com/troyhunt/status/1366581237087834112?ref_src=twsrc%5Etfw">March
+    2, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>The WIRED piece is well worth a read and sheds more light on the events
+  leading up to the breach. I've always found Andy Greenberg to be not just a
+  very switched on infosec journalist, but also a genuinely nice guy I've
+  enjoyed speaking with in the past. I can't imagine Andy being anything but
+  professional in his interactions with Gab and it was only whilst writing this
+  very paragraph that I saw a tweet which might explain why he was treated with
+  such disdain - he may have picked the wrong religion:</p>
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet">
+  <p lang="en" dir="ltr">As per my policy of not communicating with
+    non-Christian and/or communist journos, I will not be replying to this
+    non-story. <br><br>It&#39;s not a real email address, therefore it is not
+    checked. It&#39;s just a placeholder email I used when creating the account
+    almost five years ago. <a
+      href="https://t.co/BK1bCldFNe">pic.twitter.com/BK1bCldFNe</a></p>&mdash;
+  Gab.com (@getongab) <a
+    href="https://twitter.com/getongab/status/1366954798524887042?ref_src=twsrc%5Etfw">March
+    3, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>As much as I didn't want this post to touch on religion, it's hard to ignore
+  a comment like that which literally <a
+    href="https://en.wikipedia.org/wiki/List_of_religious_populations">excludes
+    the vast majority of the earth's population</a> (and I'm guessing a fair
+  chunk of Christians would be appalled by this statement as well).</p>
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet" data-conversation="none">
+  <p lang="en" dir="ltr">DDoSecrets has a <a
+      href="https://twitter.com/getongab?ref_src=twsrc%5Etfw">@getongab</a> page
+    saying: &quot;Due to these concerns, along with presence of passwords and
+    other PII, this dataset is currently only being offered to journalists and
+    researchers.&quot; I&#39;d love to get this into <a
+      href="https://twitter.com/haveibeenpwned?ref_src=twsrc%5Etfw">@haveibeenpwned</a>,
+    if anyone knows anyone there, ping them for me.</p>&mdash; Troy Hunt
+  (@troyhunt) <a
+    href="https://twitter.com/troyhunt/status/1366581240120311808?ref_src=twsrc%5Etfw">March
+    2, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>Following this tweet, I did indeed get in touch with someone and obtain a
+  copy of the data. But before I delve into that, there's just one more tweet in
+  that thread I want to embed:</p>
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet" data-conversation="none">
+  <p lang="en" dir="ltr">Weak, pathetic, and emasculated men like you are why
+    the West is failing.</p>&mdash; Gab.com (@getongab) <a
+    href="https://twitter.com/getongab/status/1366587234238025730?ref_src=twsrc%5Etfw">March
+    2, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>I'm amused by this, more than anything. For the most part I thought my
+  analysis was pretty objective and Gab (whose account seems to simply be the
+  mouthpiece of their CEO, Andrew Torba) hasn't really made it clear which bit
+  they disagreed with, so let's solider on and objectively look at the data just
+  like with any other data breach.</p>
+<p>In a 2.99GB file called accounts.sql, there are just over 4M rows of data
+  largely consisting of user records. Because I myself have a Gab account which
+  I created when started making commentary on them and Parler in Jan, naturally
+  the first thing I did was to pull out my own record:</p>
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet" data-conversation="none">
+  <p lang="en" dir="ltr">Looking into the (alleged) <a
+      href="https://twitter.com/getongab?ref_src=twsrc%5Etfw">@getongab</a> data
+    breach, many records don&#39;t have an email address or a password hash
+    (mine has the former, but not the latter). But for verification, don&#39;t
+    those dates and times look... similar. Coincidence? Or real breach? (Aus
+    time in <a
+      href="https://twitter.com/1Password?ref_src=twsrc%5Etfw">@1Password</a>)
+    <a href="https://t.co/13ihm27lsV">pic.twitter.com/13ihm27lsV</a></p>&mdash;
+  Troy Hunt (@troyhunt) <a
+    href="https://twitter.com/troyhunt/status/1366975163095392263?ref_src=twsrc%5Etfw">March
+    3, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>Per the tweet, there's no hash against my record so I can't verify the
+  password matched the long random one I created in 1Password, but it's
+  obviously pretty clear the data is legit based on the alignment of the dates.
+  In total, the file has 43,015 unique email addresses (including mine) which is
+  a far cry less than the total row count. Why? At a guess it would come down to
+  how the data was dumped. There <em>are</em> actually bcrypt password hashes
+  against many records, but they also only represent a subset of the total with
+  7,097 of them in all. Having access to these hashes gives us an opportunity to
+  debunk Gab's earlier claim that "your passwords have not been revealed", an
+  exercise that's made particularly easy due to their password criteria which
+  can be seen on the registration page:</p>
+<figure class="kg-card kg-image-card"><img
+    src="https://www.troyhunt.com/content/images/2021/03/image.png"
+    class="kg-image" alt="Gab Has Been Breached"></figure>
+<p>Requiring 8 characters isn't unusual (<a
+    href="https://www.troyhunt.com/how-long-is-long-enough-minimum-password-lengths-by-the-worlds-top-sites/">it's
+    possibly even on the high side</a>), but that's the <em>only </em>criteria.
+  What that means is that it's easy to take a list of the most common passwords
+  of 8 characters or more, pass them into <a
+    href="https://hashcat.net/">hashcat</a> and bingo, "your password has been
+  revealed":</p>
+<figure class="kg-card kg-image-card"><img
+    src="https://www.troyhunt.com/content/images/2021/03/image-1.png"
+    class="kg-image" alt="Gab Has Been Breached"
+    srcset="https://www.troyhunt.com/content/images/size/w600/2021/03/image-1.png 600w, https://www.troyhunt.com/content/images/2021/03/image-1.png 747w"
+    sizes="(min-width: 720px) 720px"></figure>
+<p>Yes, apparently Gab will let you have a password that is literally
+  "password".</p>
+<p>Andy mentioned the presence of a chatlog.txt file in his story and the data
+  is pretty limited here at only 9.53MB in size. The content ranges from an
+  extensive amount of religious scripture to very intimate messaging between 2
+  members to someone sharing a radio show which they close with "We hope you
+  enjoy the show and share it with white families". To be clear, these are
+  intended to be private messages and not something Gab should be responsible
+  for moderating (for obviously privacy reasons), but they do give an insight
+  into the interests of their members. It also speaks to my earlier point about
+  this breach being significant as it ties identities to their messaging. Some
+  of the private messages are by most standards, recalcitrant, and they sit
+  alongside the Gab username which then exists in the accounts.sql file which
+  then points to their online profile and may also include their email address.
+  Plus, there are multiple messages in which people have shared their personal
+  phone number, often to take the conversation onto WhatsApp. You can
+  immediately see the risk to individuals.</p>
+<p>The groups.sql file Andy also mentioned is much more benign. It's 31.8MB
+  worth of Gab group information spread over nearly 32k lines. I suspect there's
+  little risk posed by the exposure of the data other than that it simplifies
+  the exercise of analysing the nature of the groups people have created. One
+  thing that seeing this file helped me understand is that as much as Gab has
+  gained notoriety for housing certain types of content, there's a <em>heap</em>
+  of run of the mill stuff that'd barely raise an eyebrow. For example, there's
+  <a href="https://gab.com/groups/3122">the German Shepherds group</a>, <a
+    href="https://gab.com/groups/748">the brewing group</a> or even <a
+    href="https://gab.com/groups/1670">the Dads of Gab group</a> which is all
+  about "A group by fathers, for fathers. Topics should be about how to properly
+  parent your sons...", ok, good, this is sounding good "...and how to police
+  your wives". Aw crap. I honestly tried to focus on the positive but it's very
+  hard to go far without running into content which, well, let's just say
+  "doesn't sit well with most people". Micah Lee from The Intercept did a quick
+  analysis on the largest groups:</p>
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet">
+  <p lang="en" dir="ltr">Of the top 20 biggest groups (sorted by most members)
+    on Gab:<br><br>5 are devoted to Trump/election misinformation<br>5 are
+    devoted to QAnon <a
+      href="https://t.co/L0sLHJtEAh">pic.twitter.com/L0sLHJtEAh</a></p>&mdash;
+  Micah (@micahflee) <a
+    href="https://twitter.com/micahflee/status/1366843176867143680?ref_src=twsrc%5Etfw">March
+    2, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>And then there's the big file - statuses.sql with 62.4GB of data in it. This
+  appears to be precisely what the file name suggests - statuses posted to Gab.
+  For example, the first row appears as follows:</p>
+<!--kg-card-begin: html-->
+<pre><code>105295113355799222	3146	{"id": "105295113355799222", "url": "https://gab.com/mwill/posts/105295113355799222", "card": null, "poll": null, "tags": [], "group": null, "quote": null, "emojis": [], "reblog": null, "content": "<a href="\\"https://gab.com/TImW381\\"" class="\\"u-url" mention\\" rel="\\"nofollow" noopener noreferrer\\" target="\\"_blank\\"">@TImW381</a> There's a reason I blocked you.", "language": "en", "mentions": [{"id": "979864", "url": "https://gab.com/TImW381", "acct": "TImW381", "username": "TImW381"}], "pinnable": false, "has_quote": false, "reblogged": false, "sensitive": false, "created_at": "2020-11-29T18:52:04.042Z", "expires_at": null, "favourited": false, "revised_at": null, "visibility": "public", "quote_of_id": null, "rich_content": "", "spoiler_text": "", "reblogs_count": 0, "replies_count": 0, "in_reply_to_id": "105294344326089419", "plain_markdown": null, "favourites_count": 0, "media_attachments": [], "pinnable_by_group": false, "bookmark_collection_id": null, "in_reply_to_account_id": "979864"}	2020-11-29 13:52:04.042	\N</code></pre>
+<!--kg-card-end: html-->
+<p><a href="https://gab.com/mwill/posts/105295113355799222">The URL at the
+    beginning</a> is a public post reflecting the contents in the .sql file:</p>
+<figure class="kg-card kg-image-card"><img
+    src="https://www.troyhunt.com/content/images/2021/03/image-2.png"
+    class="kg-image" alt="Gab Has Been Breached"
+    srcset="https://www.troyhunt.com/content/images/size/w600/2021/03/image-2.png 600w, https://www.troyhunt.com/content/images/2021/03/image-2.png 711w">
+</figure>
+<p>Based on the reporting I've seen and as best I can tell from reviewing the
+  data, this is all public information. That also appears to be Gab's position
+  and reflects their messaging in their <a
+    href="https://news.gab.com/2021/03/03/an-update-on-the-gab-breach/">Update
+    on the Gab Breach post from yesterday</a>:</p>
+<blockquote>From what has been reported and from what we know thus far, the
+  overwhelming majority of the data in this breach is already public on the
+  website for anyone to see.</blockquote>
+<p>So, what's the harm? Is it a "breach" if it merely exposes data that's public
+  by design anyway? Well, it depends, primarily because large volumes of easily
+  queryable data downloadable in aggregate can offer a lot more insight than
+  manually trawling through individual pages. I don't think this presents any
+  (additional) risk or harm to the individual users of Gab who posted public
+  content, rather it makes it a hell of a lot easier for researchers to analyse
+  and form empirically derived conclusions across large volumes of data. It also
+  made it easy for me to identify more email addresses that appeared in public
+  comments, 24,017 of them in total. A bunch of those were already in the
+  accounts.sql file and a portion were also false positives (email addresses are
+  extracted via regular expression and may include other data that matches a
+  valid address pattern). But many others appeared in posts, for example a big
+  list of UK politicians in a post about "traitors". In total across all files
+  in the breach, I identified 66,521 unique addresses. This is obviously only a
+  very small subset of the ~4M users of the service and on that basis, it's a
+  minor breach in terms of personal information exposure.</p>
+<p>And what about the bug that caused all this havoc to begin with? Dan Goodin
+  (another infosec journo I respect) wrote up a piece yesterday on <a
+    href="https://arstechnica.com/gadgets/2021/03/rookie-coding-mistake-prior-to-gab-hack-came-from-sites-cto/">the
+    rookie coding mistake made by the site's CTO</a>, namely the presence of SQL
+  injection. It might be a simple mistake, but it's also an enormously common
+  one and <a
+    href="https://owasp.org/www-project-top-ten/2017/A1_2017-Injection">still
+    rates as the number one application security risk on the web today</a>. It's
+  an easy mistake to make, but also an easy one to catch and I can't help
+  wondering if its presence reflects a lack of both peer review and automated
+  analysis, both of which would likely be neglected by an under-resourced
+  company dealing with the massive rate of growth Gab has seen this year.</p>
+<p>As I was analysing this data and considering how to approach it with HIBP, I
+  was quickly drawing the conclusion that this shouldn't be publicly searchable.
+  That view was reinforced by James Roper's tweet:</p>
+<!--kg-card-begin: html-->
+<blockquote class="twitter-tweet" data-conversation="none">
+  <p lang="en" dir="ltr">Curious, will you consider this breach a
+    &quot;sensitive&quot; breach? Given that an email addresses presence in the
+    dataset potentially reveals something about that persons political beliefs?
+    I could imagine employers looking up a candidates email address and
+    excluding them based on that.</p>&mdash; James Roper (@jroper) <a
+    href="https://twitter.com/jroper/status/1366982028105670658?ref_src=twsrc%5Etfw">March
+    3, 2021</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js"
+  charset="utf-8"></script>
+<!--kg-card-end: html-->
+<p>James is spot on in that there is a very strong political leaning implied by
+  a presence in the data, and likewise a strong religious affiliation to
+  Christianity. It differs from place to place but for the most part, <a
+    href="https://www.alrc.gov.au/publication/for-your-information-australian-privacy-law-and-practice-alrc-report-108/6-the-privacy-act-some-important-definitions/sensitive-information/">both
+    political and religious views are classified as sensitive information</a>
+  and it's only fair for me to treat the data with that level of respect.
+  There's also the risk of incorrectly assuming that a presence in the breach
+  implies your views have some degree of alignment with those regularly
+  expressed on the site, yet clearly based on the presence of my own email
+  address, that assumption is incorrect. If you want to see if your own email
+  address is in the Gab breach, you'll need to <a
+    href="https://haveibeenpwned.com/NotifyMe">verify that you control it via
+    HIBP's notification service</a>. If you use <a
+    href="https://haveibeenpwned.com/DomainSearch">the domain search feature</a>
+  and can verify that you control the domain, you'll be able to see which
+  aliases on that domain appear in the breach. The data is not publicly
+  searchable from the front page nor is it available via <a
+    href="https://haveibeenpwned.com/API/v3">the API</a>.</p>
+<p>One final observation based on my time spent trawling through Gab: a platform
+  like Facebook is global in nature. <a
+    href="https://www.statista.com/statistics/268136/top-15-countries-based-on-number-of-facebook-users/">It's
+    approaching 3B monthly active users and a "mere" 190M of them are in the
+    US</a>, so call it about 7% of the audience. But 190M is still a huge number
+  and within that number are tens of millions of active users with the same
+  political alliances as those on Gab. Facebook has many, <em>many</em> flaws,
+  but lack of a diverse global audience is not one of them. That's Gab's flaw.
+  The content is <em>extremely</em> US-centric (it's difficult to derive from
+  the leaked data, but my gut feel is 90%+) and its obviously very much
+  right-wing politics. If in any doubt about the singularity of Gab's content,
+  <a href="https://gab.com/explore">just browse through the explore page</a>: at
+  the time of writing, the first few pieces of content are a climate change
+  denying piece, a post deriding those pushing back against the Texas governor
+  ending the state-wide mask mandate, a post from a Republican politician
+  Wikipedia describes as a "far-right conspiracy theorist", a derogatory piece
+  on Mitch McConnell, someone complaining they were censored on Parler and
+  posting a Photoshopped image of Biden in front of a Chinese flag, a post from
+  "far-right fake news website" (again, Wikipedia's description) about 2020
+  election fraud, one claiming the FBI is corrupt and that the KGB is more
+  trustworthy... And the trend just continues. Gab isn't a free speech
+  alternative to incumbent tech behemoths with a rich collection of wide-ranging
+  views, rather it's an echo chamber of the same political, religious and
+  scientific opinions.</p>
+<p>Gab is now the 515th data breach in HIBP. At the time of writing, I'm yet to
+  receive a breach notification about the exposure of my Gab data.</p>
